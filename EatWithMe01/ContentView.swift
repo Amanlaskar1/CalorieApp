@@ -59,7 +59,6 @@ struct ContentView: View {
             offsets.map { food[$0] }
                 .forEach(managedObjContext.delete)
 
-            // Använd den befintliga instansen av DataController för att spara ändringarna
             dataController.save(context: managedObjContext)
         }
     }

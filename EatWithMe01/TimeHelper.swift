@@ -1,6 +1,6 @@
 
-import Foundation
 
+import Foundation
 
 func calcTimeSince(date: Date) -> String {
     let minutes = Int(-date.timeIntervalSinceNow)/60
