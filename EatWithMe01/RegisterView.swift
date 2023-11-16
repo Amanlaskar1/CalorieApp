@@ -1,5 +1,6 @@
 import SwiftUI
 import FirebaseAuth
+import FirebaseFirestore
 
 struct RegisterView: View {
     @State private var email: String = ""
@@ -10,7 +11,10 @@ struct RegisterView: View {
     @State private var navigateToLoginView = false
 
     private func isValidPassword(_ password: String) -> Bool {
-        
+        // minimum 6 characters long
+        // 1 uppercase character
+        // 1 special char
+
         return true
     }
 
@@ -87,6 +91,9 @@ struct RegisterView: View {
                             print(authResult.user.uid)
                             userID = authResult.user.uid
 
+                            // Save the user ID to Firestore
+                            saveUserIDToFirestore()
+
                             navigateToContentView = true
                         }
                     }
@@ -127,6 +134,30 @@ struct RegisterView: View {
                 }
                 .hidden()
             )
+        }
+    }
+
+    private func saveUserIDToFirestore() {
+        let db = Firestore.firestore()
+
+        // Add your Firestore collection and document reference
+        let collectionReference = db.collection("users")
+        let documentReference = collectionReference.document(userID)
+
+        // Prepare data to be saved
+        let data: [String: Any] = [
+            "userID": userID,
+            // Add any other user-related data you want to store
+        ]
+
+        // Save data to Firestore
+        documentReference.setData(data) { error in
+            if let error = error {
+                print("Error adding document: \(error)")
+            } else {
+                print("Document added successfully!")
+                // You can add any additional logic or UI updates here
+            }
         }
     }
 }

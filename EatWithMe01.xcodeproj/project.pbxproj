@@ -12,6 +12,7 @@
 		441C936E2B038D9100B2CFD2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441C936D2B038D9100B2CFD2 /* DataController.swift */; };
 		441C93702B038DAA00B2CFD2 /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441C936F2B038DAA00B2CFD2 /* TimeHelper.swift */; };
 		441C93732B038DC900B2CFD2 /* FoodModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 441C93712B038DC900B2CFD2 /* FoodModel.xcdatamodeld */; };
+		4458DEFD2B058B6700C5C693 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4458DEFC2B058B6700C5C693 /* SharedData.swift */; };
 		4470F92B2AFEB07A005DAA83 /* EatWithMe01App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470F92A2AFEB07A005DAA83 /* EatWithMe01App.swift */; };
 		4470F92D2AFEB07A005DAA83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4470F92C2AFEB07A005DAA83 /* ContentView.swift */; };
 		4470F92F2AFEB07E005DAA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4470F92E2AFEB07E005DAA83 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		441C936D2B038D9100B2CFD2 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		441C936F2B038DAA00B2CFD2 /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		441C93722B038DC900B2CFD2 /* FoodModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodModel.xcdatamodel; sourceTree = "<group>"; };
+		4458DEFC2B058B6700C5C693 /* SharedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		4470F9272AFEB07A005DAA83 /* EatWithMe01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EatWithMe01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4470F92A2AFEB07A005DAA83 /* EatWithMe01App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EatWithMe01App.swift; sourceTree = "<group>"; };
 		4470F92C2AFEB07A005DAA83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				4470F92C2AFEB07A005DAA83 /* ContentView.swift */,
 				441C93692B038D4D00B2CFD2 /* AddFoodView.swift */,
 				441C93672B038D2F00B2CFD2 /* EditFoodView.swift */,
+				4458DEFC2B058B6700C5C693 /* SharedData.swift */,
 				4470F93D2AFEB0EF005DAA83 /* SplashScreen.swift */,
 				441C936F2B038DAA00B2CFD2 /* TimeHelper.swift */,
 				4488D5CB2B02357200A0CFD5 /* LoginView.swift */,
@@ -227,6 +230,7 @@
 				4488D5D02B0235E900A0CFD5 /* AuthView.swift in Sources */,
 				441C936A2B038D4D00B2CFD2 /* AddFoodView.swift in Sources */,
 				441C93732B038DC900B2CFD2 /* FoodModel.xcdatamodeld in Sources */,
+				4458DEFD2B058B6700C5C693 /* SharedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

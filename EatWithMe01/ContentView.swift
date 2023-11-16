@@ -1,9 +1,15 @@
 import SwiftUI
+import FirebaseFirestore
+import FirebaseAuth
 import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjContext
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var food: FetchedResults<Food>
+    @FetchRequest(
+        entity: Food.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Food.date, ascending: false)],
+        predicate: NSPredicate(format: "userID == %@", Auth.auth().currentUser?.uid ?? "")
+    ) var food: FetchedResults<Food>
     @StateObject private var dataController = DataController()
     @State private var showingAddView = false
 
@@ -79,4 +85,8 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+    
+    
+    
+    
 }
