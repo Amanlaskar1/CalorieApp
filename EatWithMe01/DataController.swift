@@ -1,12 +1,11 @@
-
-
 import Foundation
 import CoreData
-
+import FirebaseAuth
 class DataController: ObservableObject {
-    let container = NSPersistentContainer(name: "FoodModel")
+    let container: NSPersistentContainer
     
     init() {
+        container = NSPersistentContainer(name: "FoodModel")
         container.loadPersistentStores { description, error in
             if let error = error {
                 print("Failed to load data in DataController \(error.localizedDescription)")
@@ -25,14 +24,15 @@ class DataController: ObservableObject {
     }
     
     func addFood(name: String, calories: Double, context: NSManagedObjectContext) {
-        let food = Food(context: context)
-        food.id = UUID()
-        food.date = Date()
-        food.name = name
-        food.calories = calories
-        
+        let newFood = Food(context: context)
+        newFood.name = name
+        newFood.calories = calories
+        newFood.date = Date()
+        newFood.userID = Auth.auth().currentUser?.uid // Lägg till userID
+
         save(context: context)
     }
+
     
     func editFood(food: Food, name: String, calories: Double, context: NSManagedObjectContext) {
         food.date = Date()
